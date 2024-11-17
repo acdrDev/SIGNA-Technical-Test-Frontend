@@ -8,7 +8,7 @@ import toast from "react-hot-toast";
 
 interface Props {
   data?: IBrandData;
-  isUpdating?: Boolean;
+  isUpdating?: boolean;
   id?: number
 }
 
@@ -44,9 +44,10 @@ export default function BrandForm({
   const [brandData, setBrandData] = useState<IBrandData>(data);
 
   const onHandleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    let newBrandData = { ...brandData };
-    newBrandData[event.target.name as keyof IBrandData] = event.target.value;
-    setBrandData(newBrandData);
+    setBrandData({
+      ...brandData,
+      [event.target.name as keyof IBrandData] : event.target.value
+    });
   };
 
   const onHandleCreateBtn = async () => {

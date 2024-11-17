@@ -4,13 +4,7 @@ import BrandForm from "../components/BrandForm"
 import { getBrandById } from "../brands.api"
 import { IBrandData } from "../interfaces"
 
-interface IParams {
-  params: {
-    id: string
-  }
-}
-
-export default async function UpdateBrand({params}: IParams) {
+export default async function UpdateBrand({params}: any) {
   console.log('fdsfa', params.id)
   const id = Number(params.id)
   const res = await getBrandById(id)
