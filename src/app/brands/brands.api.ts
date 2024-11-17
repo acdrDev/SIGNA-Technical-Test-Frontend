@@ -1,6 +1,7 @@
 import { IBrandData } from "./interfaces"
 
-const API_URL = process.env.API_URL || 'http://localhost:5000/api/v1'
+const API_URL = process.env.API_URL || 'https://signa-technical-test-backend-production.up.railway.app/api/v1'
+
 export async function getAllBrands(){
   let brands = []
   try {
